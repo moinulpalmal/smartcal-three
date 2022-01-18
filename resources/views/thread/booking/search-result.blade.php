@@ -124,15 +124,12 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
-                                            @endif
                                             @elseif($item->status == 'DC')
                                                 <span class="label label-info">Delivery Complete</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
                                             <a title="Detail" class="btn btn-info btn-xs" href="{{route('thread.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
-
-
                                         </td>
                                     </tr>
                                 @endforeach
@@ -146,9 +143,9 @@
                                     <td class="text-center">Buyer</td>
                                     <td class="text-center">Delivery Location</td>
                                     <td class="text-center">Delivery Date</td>
-                                    <th class="text-center">TNA Start Date</th>
-                                    <th class="text-center">TNA End Date</th>
-                                    <th class="text-center">Delivery Complete Date</th>
+                                    <td class="text-center">TNA Start Date</td>
+                                    <td class="text-center">TNA End Date</td>
+                                    <td class="text-center">Delivery Complete Date</td>
                                     <td class="text-center">Status</td>
                                     <td class="text-center">Action</td>
                                 </tr>

@@ -124,7 +124,6 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
-                                            @endif
                                             @elseif($item->status == 'DC')
                                                 <span class="label label-info">Delivery Complete</span>
                                             @endif
