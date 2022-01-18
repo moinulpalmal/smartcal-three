@@ -78,6 +78,24 @@
                                         </div>
                                         <div class="col-md-4 no-padding">
                                             <div class="form-group">
+                                                <label for="TNAStartDate" class="control-label">TNA Start Date</label>
+                                                <input id="TNAStartDate" type="date" class="form-control @error('tna_start_date') is-invalid @enderror " name="tna_start_date" value="{{ old('tna_start_date', $purchaseOrder->tna_start_date) }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="TNAEndDate" class="control-label">TNA End Date</label>
+                                                <input id="TNAEndDate" type="date" class="form-control @error('tna_end_date') is-invalid @enderror " name="tna_end_date" value="{{ old('delivery_date', $purchaseOrder->tna_end_date) }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="DComDate" class="control-label">Supplier Delivery Complete Date</label>
+                                                <input id="DComDate" type="date" class="form-control @error('delivery_complete_date') is-invalid @enderror " name="delivery_complete_date" value="{{ old('delivery_complete_date', $purchaseOrder->delivery_complete_date) }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
                                                 <label for="FactoryName" class="control-label">Select Supplier</label>
                                                 <select id="FactoryName" class="form-control select2 @error('supplier') is-invalid @enderror" name="supplier" required style="width: 100%;" disabled>
                                                     <option value="" >- - - Select - - -</option>
