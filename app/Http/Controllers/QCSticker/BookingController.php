@@ -331,6 +331,12 @@ class BookingController extends Controller
         $purchase_order_master->product_group_id = 4;
         $purchase_order_master->lpd_po_date = $request->booking_date;
         $purchase_order_master->delivery_date = $request->delivery_date;
+        $purchase_order_master->tna_start_date = $request->tna_start_date;
+        $purchase_order_master->tna_end_date = $request->tna_end_date;
+        if(!empty($request->delivery_complete_date)){
+            $purchase_order_master->delivery_complete_date = $request->delivery_complete_date;
+            $purchase_order_master->status = "DC";
+        }
 //        $purchase_order_master->supplier_id = $request->supplier;
         $purchase_order_master->buyer_id = $request->buyer;
         $purchase_order_master->delivery_location_id = $request->delivery_location;

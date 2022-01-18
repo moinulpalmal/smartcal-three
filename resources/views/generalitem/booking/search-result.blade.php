@@ -98,6 +98,21 @@
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('delivery_locations','id',$item->delivery_location_id))->name}}</td>
                                         <td class="text-center"> {{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
                                         <td class="text-center">
+                                            @if($item->tna_start_date != null)
+                                                {{ \Carbon\Carbon::parse($item->tna_start_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            @if($item->tna_end_date != null)
+                                                {{ \Carbon\Carbon::parse($item->tna_end_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            @if($item->delivery_complete_date != null)
+                                                {{ \Carbon\Carbon::parse($item->delivery_complete_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
                                             @if($item->status == 'I')
                                                 <span class="label label-info">Waiting for approval</span>
                                             @elseif($item->status == 'A')
@@ -106,6 +121,9 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
+                                            @endif
+                                            @elseif($item->status == 'DC')
+                                                <span class="label label-info">Delivery Complete</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
