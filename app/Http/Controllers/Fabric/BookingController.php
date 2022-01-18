@@ -24,10 +24,30 @@ class BookingController extends Controller
             ->where('product_group_id', 9)
             ->where('status', '!=', 'D')
             ->get()
-            ->take(500);
+            ->take(1000);
 
         //return $purchaseOrders;
         return view('fabric.booking.recent', compact('purchaseOrders'));
+    }
+
+    public function active(){
+        $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+            ->where('product_group_id', 9)
+            ->where('status', '=', 'A')
+            ->get();
+        //return $purchaseOrders;
+        return view('fabric.booking.active', compact('purchaseOrders'));
+    }
+
+    public function deliveryComplete(){
+        $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+            ->where('product_group_id', 9)
+            ->where('status', '=', 'DC')
+            ->get()
+            ->take(1000);
+
+        //return $purchaseOrders;
+        return view('fabric.booking.delivery-complete', compact('purchaseOrders'));
     }
 
     public function search(){

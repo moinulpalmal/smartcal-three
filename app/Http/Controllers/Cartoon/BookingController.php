@@ -20,15 +20,37 @@ use phpDocumentor\Reflection\Types\Float_;
 class BookingController extends Controller
 {
     //group id: 1
+    public function active(){
+        $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+            ->where('product_group_id', 1)
+            ->where('status', '=', 'A')
+            ->get();
+        //return $purchaseOrders;
+        return view('cartoon.booking.active', compact('purchaseOrders'));
+
+    }
+
     public function recent(){
         $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
             ->where('product_group_id', 1)
             ->where('status', '!=', 'D')
             ->get()
-            ->take(500);
+            ->take(1000);
 
         //return $purchaseOrders;
         return view('cartoon.booking.recent', compact('purchaseOrders'));
+
+    }
+
+    public function deliveryComplete(){
+        $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+            ->where('product_group_id', 1)
+            ->where('status', '=', 'DC')
+            ->get()
+            ->take(1000);
+
+        //return $purchaseOrders;
+        return view('cartoon.booking.delivery-complete', compact('purchaseOrders'));
 
     }
 
@@ -154,12 +176,17 @@ class BookingController extends Controller
             'garments_quantity' => 'required|numeric|min:1'
         ]);
 
-
         $purchase_order_master = PurchaseOrderMaster::find($request->id);
 
         $purchase_order_master->product_group_id = 1;
         $purchase_order_master->lpd_po_date = $request->booking_date;
         $purchase_order_master->delivery_date = $request->delivery_date;
+        $purchase_order_master->tna_start_date = $request->tna_start_date;
+        $purchase_order_master->tna_end_date = $request->tna_end_date;
+        if(!empty($request->delivery_complete_date)){
+            $purchase_order_master->delivery_complete_date = $request->delivery_complete_date;
+            $purchase_order_master->status = "DC";
+        }
 //        $purchase_order_master->supplier_id = $request->supplier;
         $purchase_order_master->buyer_id = $request->buyer;
         $purchase_order_master->delivery_location_id = $request->delivery_location;

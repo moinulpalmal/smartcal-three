@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin-master')
 @section('title')
-    Interlining
+    Carton & Board
 @endsection
 @section('content')
     <style type="text/css">
@@ -21,17 +21,17 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Interlining <span>Booking List</span></h2>
+            <h2>Carton & Board <span>Setup</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"> Interlining</a>
+                        <a href="#"> Carton & Board</a>
                     </li>
                     <li>
-                        <a href="{{route('interlining.booking.recent')}}"> Recent Bookings</a>
+                        <a href="{{route('cartoon.booking.delivery-complete')}}"> Deliver Complete Bookings</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                 <section class="tile">
                     <!-- tile header -->
                     <div class="tile-header dvd dvd-btm">
-                        <h1 class="custom-font"><strong>Interlining</strong> Booking List</h1>
+                        <h1 class="custom-font"><strong>Carton & Board</strong> Booking List</h1>
                         <ul class="controls">
                             <li class="dropdown">
                                 <a role="button" tabindex="0" class="dropdown-toggle settings" data-toggle="dropdown">
@@ -111,8 +111,22 @@
                                             @endif
                                         </td>
                                         <td class="text-center">
-                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('interlining.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
+                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('cartoon.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
 
+                                           {{-- <a onclick="iconChange()" data-id = "{{ $item->id }}" class="EditFactory btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+                                            @if($item->status == 'I')
+                                                <a title="Activate" class="ActivateBuyer btn btn-success btn-xs" data-id = "{{ $item->id }}"><i class="fa fa-arrow-circle-up"></i></a>
+                                            @else
+                                                @if($item->status == 'A')
+                                                    <a title="De-Activate" class="DeActivateBuyer btn btn-warning btn-xs" data-id = "{{ $item->id }}"><i class="fa fa-arrow-circle-down"></i></a>
+                                                    --}}{{--                                                    <a title="Block" class="BlockActivateBuyer btn btn-danger btn-xs" data-id = "{{ $item->id }}"><i class="fa fa-times"></i></a>--}}{{--
+                                                @elseif($item->status == 'IN' || $item->status == 'B')
+                                                    <a title="Activate" class="ActivateBuyer btn btn-success btn-xs" data-id = "{{ $item->id }}"><i class="fa fa-arrow-circle-up"></i></a>
+                                                @endif
+                                                @if($item->status == 'A')
+                                                    <a title="Delete" class="DeleteBuyer btn btn-danger btn-xs" data-id = "{{ $item->id }}"><i class="fa fa-trash"></i></a>
+                                                @endif
+                                            @endif--}}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -151,8 +165,16 @@
 @endsection
 @section('pageScripts')
     <script>
+        /* $(window).load(function(){
+             $('#advanced-usage').DataTable({
+                 "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]]
+             });
+         });*/
+
 
         $(window).load(function(){
+
+
             $(document).ready(function() {
                 // Setup - add a text input to each footer cell
                 $('#advanced-usage tfoot td').each( function () {
@@ -165,7 +187,6 @@
 
                     initComplete: function () {
                         // Apply the search
-
                         this.api().columns().every( function () {
                             var that = this;
                             $( 'input', this.footer() ).on( 'keyup change clear', function () {
@@ -176,10 +197,111 @@
                                 }
                             } );
                         } );
+
                     }
+
+
                 });
 
+
+
             } );
+        });
+
+        $(function(){
+            $.ajaxSetup({
+                headers: { 'X-CSRF-TOKEN' : '{{ csrf_token() }}' }
+            });
+            $('#FactoryAdd').submit(function(e){
+                e.preventDefault();
+                var data = $(this).serialize();
+                var id = $('#HiddenFactoryID').val();
+                //console.log(data);
+                var url = '{{ route('cartoon.product.save') }}';
+                //console.log(data);
+                $.ajax({
+                    url: url,
+                    method:'POST',
+                    data:data,
+                    success:function(data){
+                        console.log(data);
+                        if(id)
+                        {
+                            swal({
+                                title: "Data Updated Successfully!",
+                                icon: "success",
+                                button: "Ok!",
+                            }).then(function (value) {
+                                if(value){
+                                    window.location.href = window.location.href.replace(/#.*$/, '');
+                                }
+                            });
+                        }
+                        else
+                        {
+                            console.log(data);
+                            swal({
+                                title: "Data Inserted Successfully!",
+                                icon: "success",
+                                button: "Ok!",
+                            }).then(function (value) {
+                                if(value){
+                                    window.location.href = window.location.href.replace(/#.*$/, '');
+                                }
+                            });
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                        swal({
+                            title: "Data Not Saved!",
+                            text: "Please Check Your Data!",
+                            icon: "error",
+                            button: "Ok!",
+                            className: "myClass",
+                        });
+                    }
+                })
+
+            })
+        });
+        $('#advanced-usage').on('click',".EditFactory", function(){
+            var button = $(this);
+            var FactoryID = button.attr("data-id");
+            //$('body').animate({scrollTop:0}, 400);
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            var url = '{{ route('cartoon.product.edit') }}';
+            $.ajax({
+                url: url,
+                method:'POST',
+                data:{id: FactoryID},
+                success:function(data){
+                    $('input[name=name]').val(data.name);
+                    $('input[name=id]').val(data.id);
+                    if (data.is_board == 1)
+                    {
+                        $('input[name=IsBoard]').prop('checked', true);
+                    }
+                    else if (data.is_board == 0)
+                    {
+                        $('input[name=IsBoard]').prop('checked', false);
+                    }
+                },
+                error:function(error){
+                    swal({
+                        title: "No Data Found!",
+                        text: "no data!",
+                        icon: "error",
+                        button: "Ok!",
+                        className: "myClass",
+                    });
+                }
+            })
+
         });
 
 

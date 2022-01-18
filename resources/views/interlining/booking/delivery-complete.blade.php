@@ -31,7 +31,7 @@
                         <a href="#"> Interlining</a>
                     </li>
                     <li>
-                        <a href="{{route('interlining.booking.recent')}}"> Recent Bookings</a>
+                        <a href="{{route('interlining.booking.delivery-complete')}}"> Delivery Complete Bookings</a>
                     </li>
                 </ul>
             </div>

@@ -185,6 +185,8 @@ Auth::routes();
     Route::group(['as' => 'cartoon.','prefix' => 'cartoon','namespace' => 'Cartoon','middleware' => ['auth','cartoon']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -226,6 +228,8 @@ Auth::routes();
     Route::group(['as' => 'elastic.','prefix' => 'elastic','namespace' => 'Elastic','middleware' => ['auth','elastic']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -266,6 +270,8 @@ Auth::routes();
     Route::group(['as' => 'fabric.','prefix' => 'fabric','namespace' => 'Fabric','middleware' => ['auth','fabric']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -306,6 +312,8 @@ Auth::routes();
     Route::group(['as' => 'tissue.','prefix' => 'tissue','namespace' => 'Tissue','middleware' => ['auth','tissue']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -346,6 +354,8 @@ Auth::routes();
     Route::group(['as' => 'interlining.','prefix' => 'interlining','namespace' => 'Interlining','middleware' => ['auth','interlining']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -390,6 +400,8 @@ Auth::routes();
     Route::group(['as' => 'qcsticker.','prefix' => 'qcsticker','namespace' => 'QCSticker','middleware' => ['auth','qcsticker']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -434,6 +446,8 @@ Auth::routes();
     Route::group(['as' => 'asticker.','prefix' => 'asticker','namespace' => 'ArrowSticker','middleware' => ['auth','arrowsticker']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -477,6 +491,8 @@ Auth::routes();
     Route::group(['as' => 'gumtape.','prefix' => 'gumtape','namespace' => 'GumTape','middleware' => ['auth','gumtape']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -521,6 +537,8 @@ Auth::routes();
     Route::group(['as' => 'thread.','prefix' => 'thread','namespace' => 'Thread','middleware' => ['auth','thread']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -565,6 +583,8 @@ Auth::routes();
     Route::group(['as' => 'poly.','prefix' => 'poly','namespace' => 'Poly','middleware' => ['auth','poly']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
@@ -608,6 +628,8 @@ Auth::routes();
     Route::group(['as' => 'generalitem.','prefix' => 'generalitem','namespace' => 'GeneralItem','middleware' => ['auth','generalitem']] , function(){
         //booking
         Route::get('booking/recent','BookingController@recent')->name('booking.recent');
+        Route::get('booking/active','BookingController@active')->name('booking.active');
+        Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
