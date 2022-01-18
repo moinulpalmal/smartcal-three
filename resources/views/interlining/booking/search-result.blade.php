@@ -82,6 +82,9 @@
                                     <th class="text-center">Buyer</th>
                                     <th class="text-center">Delivery Location</th>
                                     <th class="text-center">Delivery Date</th>
+                                    <th class="text-center">TNA Start Date</th>
+                                    <th class="text-center">TNA End Date</th>
+                                    <th class="text-center">Delivery Complete Date</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
@@ -98,6 +101,21 @@
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('delivery_locations','id',$item->delivery_location_id))->name}}</td>
                                         <td class="text-center"> {{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
                                         <td class="text-center">
+                                            @if($item->tna_start_date != null)
+                                                {{ \Carbon\Carbon::parse($item->tna_start_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            @if($item->tna_end_date != null)
+                                                {{ \Carbon\Carbon::parse($item->tna_end_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            @if($item->delivery_complete_date != null)
+                                                {{ \Carbon\Carbon::parse($item->delivery_complete_date)->format('d/m/Y') }}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
                                             @if($item->status == 'I')
                                                 <span class="label label-info">Waiting for approval</span>
                                             @elseif($item->status == 'A')
@@ -106,6 +124,9 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
+                                            @endif
+                                            @elseif($item->status == 'DC')
+                                                <span class="label label-info">Delivery Complete</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
@@ -123,6 +144,9 @@
                                     <td class="text-center">Buyer</td>
                                     <td class="text-center">Delivery Location</td>
                                     <td class="text-center">Delivery Date</td>
+                                    <th class="text-center">TNA Start Date</th>
+                                    <th class="text-center">TNA End Date</th>
+                                    <th class="text-center">Delivery Complete Date</th>
                                     <td class="text-center">Status</td>
                                     <td class="text-center">Action</td>
                                 </tr>
