@@ -45,10 +45,12 @@
                                             <li class="{{ (request()->is('cartoon/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('cartoon/booking/recent')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createcb', Auth::user()->id))
-                                                    <li class="{{ (request()->is('cartoon/booking/new')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('cartoon/booking/new')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('cartoon/booking/recent')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('cartoon/booking/active')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('cartoon/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('cartoon/booking/search')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -63,10 +65,12 @@
                                             <li class="{{ (request()->is('elastic/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('elastic/booking/recent')) ? 'active' : '' }}"><a href="{{route('elastic.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createe', Auth::user()->id))
-                                                        <li class="{{ (request()->is('elastic/booking/new')) ? 'active' : '' }}"><a href="{{route('elastic.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('elastic/booking/new')) ? 'active' : '' }}"><a href="{{route('elastic.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('elastic/booking/recent')) ? 'active' : '' }}"><a href="{{route('elastic.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('elastic/booking/active')) ? 'active' : '' }}"><a href="{{route('elastic.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('elastic/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('elastic.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('elastic/booking/search')) ? 'active' : '' }}"><a href="{{route('elastic.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -81,10 +85,12 @@
                                             <li class="{{ (request()->is('fabric/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('fabric/booking/recent')) ? 'active' : '' }}"><a href="{{route('fabric.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createf', Auth::user()->id))
-                                                        <li class="{{ (request()->is('fabric/booking/new')) ? 'active' : '' }}"><a href="{{route('fabric.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('fabric/booking/new')) ? 'active' : '' }}"><a href="{{route('fabric.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('fabric/booking/recent')) ? 'active' : '' }}"><a href="{{route('fabric.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('fabric/booking/active')) ? 'active' : '' }}"><a href="{{route('fabric.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('fabric/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('fabric.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('fabric/booking/search')) ? 'active' : '' }}"><a href="{{route('fabric.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -99,10 +105,12 @@
                                             <li class="{{ (request()->is('tissue/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('tissue/booking/recent')) ? 'active' : '' }}"><a href="{{route('tissue.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createt', Auth::user()->id))
-                                                        <li class="{{ (request()->is('tissue/booking/new')) ? 'active' : '' }}"><a href="{{route('tissue.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('tissue/booking/new')) ? 'active' : '' }}"><a href="{{route('tissue.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('tissue/booking/recent')) ? 'active' : '' }}"><a href="{{route('tissue.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('tissue/booking/active')) ? 'active' : '' }}"><a href="{{route('tissue.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('tissue/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('tissue.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('tissue/booking/search')) ? 'active' : '' }}"><a href="{{route('tissue.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -117,10 +125,12 @@
                                             <li class="{{ (request()->is('interlining/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('interlining/booking/recent')) ? 'active' : '' }}"><a href="{{route('interlining.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createi', Auth::user()->id))
-                                                        <li class="{{ (request()->is('interlining/booking/new')) ? 'active' : '' }}"><a href="{{route('interlining.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('interlining/booking/new')) ? 'active' : '' }}"><a href="{{route('interlining.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('interlining/booking/recent')) ? 'active' : '' }}"><a href="{{route('interlining.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('interlining/booking/active')) ? 'active' : '' }}"><a href="{{route('interlining.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('interlining/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('interlining.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('interlining/booking/search')) ? 'active' : '' }}"><a href="{{route('interlining.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -135,10 +145,12 @@
                                             <li class="{{ (request()->is('qcsticker/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('qcsticker/booking/recent')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createqcs', Auth::user()->id))
-                                                        <li class="{{ (request()->is('qcsticker/booking/new')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('qcsticker/booking/new')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('qcsticker/booking/recent')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('qcsticker/booking/active')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('qcsticker/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('qcsticker/booking/search')) ? 'active' : '' }}"><a href="{{route('qcsticker.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -153,10 +165,12 @@
                                             <li class="{{ (request()->is('asticker/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('asticker/booking/recent')) ? 'active' : '' }}"><a href="{{route('asticker.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createas', Auth::user()->id))
-                                                        <li class="{{ (request()->is('asticker/booking/new')) ? 'active' : '' }}"><a href="{{route('asticker.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('asticker/booking/new')) ? 'active' : '' }}"><a href="{{route('asticker.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('asticker/booking/recent')) ? 'active' : '' }}"><a href="{{route('asticker.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('asticker/booking/active')) ? 'active' : '' }}"><a href="{{route('asticker.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('asticker/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('asticker.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('asticker/booking/search')) ? 'active' : '' }}"><a href="{{route('asticker.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -171,10 +185,12 @@
                                             <li class="{{ (request()->is('gumtape/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('gumtape/booking/recent')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('creategt', Auth::user()->id))
-                                                        <li class="{{ (request()->is('gumtape/booking/new')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('gumtape/booking/new')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('gumtape/booking/recent')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('gumtape/booking/active')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('gumtape/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('gumtape/booking/search')) ? 'active' : '' }}"><a href="{{route('gumtape.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -189,10 +205,12 @@
                                             <li class="{{ (request()->is('thread/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('thread/booking/recent')) ? 'active' : '' }}"><a href="{{route('thread.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createtd', Auth::user()->id))
-                                                        <li class="{{ (request()->is('thread/booking/new')) ? 'active' : '' }}"><a href="{{route('thread.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('thread/booking/new')) ? 'active' : '' }}"><a href="{{route('thread.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('thread/booking/recent')) ? 'active' : '' }}"><a href="{{route('thread.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('thread/booking/active')) ? 'active' : '' }}"><a href="{{route('thread.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('thread/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('thread.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('thread/booking/search')) ? 'active' : '' }}"><a href="{{route('thread.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -207,10 +225,12 @@
                                             <li class="{{ (request()->is('poly/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('poly/booking/recent')) ? 'active' : '' }}"><a href="{{route('poly.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('createp', Auth::user()->id))
-                                                        <li class="{{ (request()->is('poly/booking/new')) ? 'active' : '' }}"><a href="{{route('poly.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('poly/booking/new')) ? 'active' : '' }}"><a href="{{route('poly.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
+                                                    <li class="{{ (request()->is('poly/booking/recent')) ? 'active' : '' }}"><a href="{{route('poly.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('poly/booking/active')) ? 'active' : '' }}"><a href="{{route('poly.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('poly/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('poly.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('poly/booking/search')) ? 'active' : '' }}"><a href="{{route('poly.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
@@ -225,11 +245,13 @@
                                             <li class="{{ (request()->is('generalitem/booking*')) ? 'active open' : '' }}">
                                                 <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
                                                 <ul>
-                                                    <li class="{{ (request()->is('generalitem/booking/recent')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent Bookings</span></a></li>
                                                     @if(Auth::user()->hasTaskPermission('creategi', Auth::user()->id))
-                                                        <li class="{{ (request()->is('generalitem/booking/new')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New Booking</span></a></li>
+                                                        <li class="{{ (request()->is('generalitem/booking/new')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.new')}}"><i class="fa fa-caret-right"></i> <span> Create New</span></a></li>
                                                     @endif
-                                                    <li class="{{ (request()->is('generalitem/booking/search')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
+                                                    <li class="{{ (request()->is('generalitem/booking/recent')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.recent')}}"><i class="fa fa-caret-right"></i> <span> Recent</span></a></li>
+                                                    <li class="{{ (request()->is('generalitem/booking/active')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
+                                                    <li class="{{ (request()->is('generalitem/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
+                                                                                                       <li class="{{ (request()->is('generalitem/booking/search')) ? 'active' : '' }}"><a href="{{route('generalitem.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
                                                 </ul>
                                             </li>
                                             <li class="{{ (request()->is('generalitem/product')) ? 'active' : '' }}"><a href="{{route('generalitem.product')}}"><i class="fa fa-cog"></i> <span> Product Setup</span></a></li>

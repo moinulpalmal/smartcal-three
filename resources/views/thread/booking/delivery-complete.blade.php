@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin-master')
 @section('title')
-    Interlining
+    Thread
 @endsection
 @section('content')
     <style type="text/css">
@@ -21,17 +21,17 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Interlining <span>Booking List</span></h2>
+            <h2>Thread <span>Booking List</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"> Interlining</a>
+                        <a href="#"> Thread</a>
                     </li>
                     <li>
-                        <a href="{{route('interlining.booking.recent')}}"> Recent Bookings</a>
+                        <a href="{{route('thread.booking.delivery-complete')}}"> Delivery Complete Bookings</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                 <section class="tile">
                     <!-- tile header -->
                     <div class="tile-header dvd dvd-btm">
-                        <h1 class="custom-font"><strong>Interlining</strong> Booking List</h1>
+                        <h1 class="custom-font"><strong>Thread</strong> Booking List</h1>
                         <ul class="controls">
                             <li class="dropdown">
                                 <a role="button" tabindex="0" class="dropdown-toggle settings" data-toggle="dropdown">
@@ -96,7 +96,7 @@
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('suppliers','id',$item->supplier_id))->name}}</td>
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('buyers','id',$item->buyer_id))->name}}</td>
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('delivery_locations','id',$item->delivery_location_id))->name}}</td>
-                                        <td class="text-center"> {{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
+                                        <td class="text-center">{{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
                                         <td class="text-center">
                                             @if($item->status == 'I')
                                                 <span class="label label-info">Waiting for approval</span>
@@ -111,7 +111,7 @@
                                             @endif
                                         </td>
                                         <td class="text-center">
-                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('interlining.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
+                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('thread.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
 
                                         </td>
                                     </tr>

@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin-master')
 @section('title')
-    Interlining
+    QC Sticker
 @endsection
 @section('content')
     <style type="text/css">
@@ -21,17 +21,17 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Interlining <span>Booking List</span></h2>
+            <h2>QC Sticker <span>Booking List</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"> Interlining</a>
+                        <a href="#"> QC Sticker</a>
                     </li>
                     <li>
-                        <a href="{{route('interlining.booking.recent')}}"> Recent Bookings</a>
+                        <a href="{{route('qcsticker.booking.active')}}"> Active Bookings</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                 <section class="tile">
                     <!-- tile header -->
                     <div class="tile-header dvd dvd-btm">
-                        <h1 class="custom-font"><strong>Interlining</strong> Booking List</h1>
+                        <h1 class="custom-font"><strong>QC Sticker</strong> Booking List</h1>
                         <ul class="controls">
                             <li class="dropdown">
                                 <a role="button" tabindex="0" class="dropdown-toggle settings" data-toggle="dropdown">
@@ -111,7 +111,7 @@
                                             @endif
                                         </td>
                                         <td class="text-center">
-                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('interlining.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
+                                            <a title="Detail" class="btn btn-info btn-xs" href="{{route('qcsticker.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
 
                                         </td>
                                     </tr>

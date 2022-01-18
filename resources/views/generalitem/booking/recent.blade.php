@@ -106,11 +106,12 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
+                                            @elseif($item->status == 'DC')
+                                                <span class="label label-info">Delivery Complete</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
                                             <a title="Detail" class="btn btn-info btn-xs" href="{{route('generalitem.booking.detail', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a>
-
                                         </td>
                                     </tr>
                                 @endforeach

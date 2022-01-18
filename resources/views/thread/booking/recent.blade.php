@@ -96,7 +96,7 @@
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('suppliers','id',$item->supplier_id))->name}}</td>
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('buyers','id',$item->buyer_id))->name}}</td>
                                         <td class="text-left">{{(App\Helpers\Helper::IDwiseData('delivery_locations','id',$item->delivery_location_id))->name}}</td>
-                                        <td class="text-center"> {{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
+                                        <td class="text-center">{{\Carbon\Carbon::parse($item->delivery_date)->format('d/m/Y')}}</td>
                                         <td class="text-center">
                                             @if($item->status == 'I')
                                                 <span class="label label-info">Waiting for approval</span>
@@ -106,6 +106,8 @@
                                                 <span class="label label-danger">Blocked</span>
                                             @elseif($item->status == 'IN')
                                                 <span class="label label-warning">In-Active</span>
+                                            @elseif($item->status == 'DC')
+                                                <span class="label label-info">Delivery Complete</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
