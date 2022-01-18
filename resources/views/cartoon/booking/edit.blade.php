@@ -64,35 +64,54 @@
                                     <input id="ID" type="hidden" class="form-control" name="id" value="{{ old('id', $purchaseOrder->id) }}" required autofocus>
 
                                     <div class="row" style="padding: 0px 15px;">
-                                    <div class="col-md-4 no-padding">
-                                        <div class="form-group">
-                                            <label for="EmployeeJoiningDate" class="control-label">Booking Date</label>
-                                            <input id="EmployeeJoiningDate" type="date" class="form-control @error('booking_date') is-invalid @enderror" name="booking_date" value="{{ old('booking_date', $purchaseOrder->lpd_po_date) }}" required autofocus>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="EmployeeJoiningDate" class="control-label">Booking Date</label>
+                                                <input id="EmployeeJoiningDate" type="date" class="form-control @error('booking_date') is-invalid @enderror" name="booking_date" value="{{ old('booking_date', $purchaseOrder->lpd_po_date) }}" required autofocus>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 no-padding">
-                                        <div class="form-group">
-                                            <label for="EmployeeDDate" class="control-label">Delivery Date</label>
-                                            <input id="EmployeeDDate" type="date" class="form-control @error('delivery_date') is-invalid @enderror" name="delivery_date" value="{{ old('delivery_date', $purchaseOrder->delivery_date) }}" required autofocus>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="EmployeeDDate" class="control-label">Delivery Date</label>
+                                                <input id="EmployeeDDate" type="date" class="form-control @error('delivery_date') is-invalid @enderror" name="delivery_date" value="{{ old('delivery_date', $purchaseOrder->delivery_date) }}" required autofocus>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 no-padding">
-                                        <div class="form-group">
-                                            <label for="FactoryName" class="control-label">Select Supplier</label>
-                                            <select id="FactoryName" class="form-control select2 @error('supplier') is-invalid @enderror" name="supplier" required style="width: 100%;" disabled>
-                                                <option value="" >- - - Select - - -</option>
-                                                @if(!empty($suppliers))
-                                                    @foreach($suppliers as $item)
-                                                        <option value="{{ $item->id }}" @if($purchaseOrder->supplier_id == $item->id) selected="selected" @endif>{{ $item->name }}</option>
-                                                    @endforeach
-                                                @endif
-                                            </select>
+                                        {{--<need to add>--}}
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="TNAStartDate" class="control-label">TNA Start Date</label>
+                                                <input id="TNAStartDate" type="date" class="form-control @error('tna_start_date') is-invalid @enderror " name="tna_start_date" value="{{ old('tna_start_date', $purchaseOrder->tna_start_date) }}">
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="TNAEndDate" class="control-label">TNA End Date</label>
+                                                <input id="TNAEndDate" type="date" class="form-control @error('tna_end_date') is-invalid @enderror " name="tna_end_date" value="{{ old('delivery_date', $purchaseOrder->tna_end_date) }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="DComDate" class="control-label">Supplier Delivery Complete Date</label>
+                                                <input id="DComDate" type="date" class="form-control @error('delivery_complete_date') is-invalid @enderror " name="delivery_complete_date" value="{{ old('delivery_complete_date', $purchaseOrder->delivery_complete_date) }}">
+                                            </div>
+                                        </div>
+                                        {{--<need to add>--}}
+                                        <div class="col-md-4 no-padding">
+                                            <div class="form-group">
+                                                <label for="FactoryName" class="control-label">Select Supplier</label>
+                                                <select id="FactoryName" class="form-control select2 @error('supplier') is-invalid @enderror" name="supplier" required style="width: 100%;" disabled>
+                                                    <option value="" >- - - Select - - -</option>
+                                                    @if(!empty($suppliers))
+                                                        @foreach($suppliers as $item)
+                                                            <option value="{{ $item->id }}" @if($purchaseOrder->supplier_id == $item->id) selected="selected" @endif>{{ $item->name }}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        </div>
 
                                 </div>
                                     <div class="row" style="padding: 0px 15px;">
-
                                         <div class="col-md-4 no-padding">
                                             <div class="form-group">
                                                 <label for="DepartmentName" class="control-label">Select Delivery Location</label>
