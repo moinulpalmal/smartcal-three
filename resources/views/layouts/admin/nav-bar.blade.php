@@ -52,6 +52,7 @@
                                                     <li class="{{ (request()->is('cartoon/booking/active')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
                                                     <li class="{{ (request()->is('cartoon/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('cartoon/booking/search')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
+                                                        <li class="{{ (request()->is('cartoon/booking/report')) ? 'active' : '' }}"><a href="{{route('cartoon.booking.report')}}"><i class="fa fa-caret-right"></i> <span> Booking Report</span></a></li>
                                                 </ul>
                                             </li>
                                              <li class="{{ (request()->is('cartoon/product')) ? 'active' : '' }}"><a href="{{route('cartoon.product')}}"><i class="fa fa-cog"></i> <span> Product Setup</span></a></li>
@@ -72,6 +73,7 @@
                                                     <li class="{{ (request()->is('elastic/booking/active')) ? 'active' : '' }}"><a href="{{route('elastic.booking.active')}}"><i class="fa fa-caret-right"></i> <span> Active</span></a></li>
                                                     <li class="{{ (request()->is('elastic/booking/delivery-complete')) ? 'active' : '' }}"><a href="{{route('elastic.booking.delivery-complete')}}"><i class="fa fa-caret-right"></i> <span> Delivery Complete</span></a></li>
                                                     <li class="{{ (request()->is('elastic/booking/search')) ? 'active' : '' }}"><a href="{{route('elastic.booking.search')}}"><i class="fa fa-caret-right"></i> <span> Booking Search</span></a></li>
+                                                        <li class="{{ (request()->is('elastic/booking/report')) ? 'active' : '' }}"><a href="{{route('elastic.booking.report')}}"><i class="fa fa-caret-right"></i> <span> Booking Report</span></a></li>
                                                 </ul>
                                             </li>
                                             <li class="{{ (request()->is('elastic/product')) ? 'active' : '' }}"><a href="{{route('elastic.product')}}"><i class="fa fa-cog"></i> <span> Product Setup</span></a></li>
