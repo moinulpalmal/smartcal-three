@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin-master')
 @section('title')
-    Arrow Sticker
+    Poly
 @endsection
 @section('content')
     <style type="text/css">
@@ -21,17 +21,17 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Arrow Sticker <span>Setup</span></h2>
+            <h2>Poly <span>Setup</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"> Arrow Sticker</a>
+                        <a href="#"> Poly</a>
                     </li>
                     <li>
-                        <a class="active" href="{{route('asticker.booking.report')}}"> Booking Report</a>
+                        <a class="active" href="{{route('poly.booking.report')}}"> Booking Report</a>
                     </li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
             <!-- col -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!-- tile -->
-                <form method="post" id="UserCreatForm" name="UserCreatForm" action="{{route('asticker.booking.report-result')}}" enctype="multipart/form-data" >
+                <form method="post" id="UserCreatForm" name="UserCreatForm" action="{{route('poly.booking.report-result')}}" enctype="multipart/form-data" >
                     {{ csrf_field() }}
                     <section class="tile">
                         <!-- tile header -->
