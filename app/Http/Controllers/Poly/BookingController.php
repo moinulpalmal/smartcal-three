@@ -63,6 +63,78 @@ class BookingController extends Controller
             compact('suppliers', 'buyers', 'currentDate'));
     }
 
+    public function report(){
+        $suppliers = Supplier::getActiveSupplierByProductGroup(6);
+        //$deliveryLocations = DeliveryLocation::getDeliveryLocationForSelectField();
+        $buyers = Buyer::getBuyersForSelectField();
+        $currentDate = Carbon::now();
+
+        //return $currentDate;
+
+        return view('poly.booking.report',
+            compact('suppliers', 'buyers', 'currentDate'));
+    }
+
+    public function reportResult(Request $request){
+        $lpd_po_no = $request->get('lpd_po_no');
+
+        if(!empty($lpd_po_no)){
+
+            $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+                ->where('product_group_id', 6)
+                ->where('lpd_po_no', $lpd_po_no)
+                ->where('status', '!=', 'D')
+                ->get();
+
+            if(!empty($status)){
+                $purchaseOrders = $purchaseOrders->whereIn('status', $status);
+            }
+
+            return view('poly.booking.search-result', compact('purchaseOrders'));
+        }
+        else{
+
+            $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
+                ->where('product_group_id', 6)
+                ->where('status', '!=', 'D')
+                ->get();
+
+            if(!empty($request->get('from_date'))){
+                if(!empty($request->get('to_date'))){
+                    $purchaseOrders = $purchaseOrders->whereBetween('lpd_po_date', array($request->get('from_date'), $request->get('to_date')));
+
+                }
+                else{
+                    $purchaseOrders = $purchaseOrders->whereBetween('lpd_po_date', array($request->get('from_date'), Carbon::today()));
+                }
+            }
+            else{
+                if(!empty($request->get('to_date'))){
+                    $purchaseOrders = $purchaseOrders->whereBetween('lpd_po_date', array( Carbon::today()->addYear(-30), $request->get('to_date')));
+                }
+                else{
+                    $purchaseOrders = $purchaseOrders->whereBetween('lpd_po_date', array(Carbon::today()->addYear(-30), Carbon::today()));
+                }
+            }
+
+            if(!empty( $request->get('supplier'))){
+                $purchaseOrders = $purchaseOrders->whereIn('supplier_id', $request->get('supplier'));
+            }
+
+            if(!empty($request->get('buyer'))){
+                $purchaseOrders = $purchaseOrders->whereIn('buyer_id',   $request->get('buyer'));
+            }
+
+            if(!empty( $request->get('status'))){
+                $purchaseOrders = $purchaseOrders->whereIn('status',  $request->get('status'));
+            }
+
+            //return $purchaseOrders;
+
+            return view('poly.booking.booking-report', compact('purchaseOrders', 'request'));
+        }
+    }
+
     public function searchBooking(Request $request){
         $lpd_po_no = $request->get('lpd_po_no');
         if(!empty($lpd_po_no)){
