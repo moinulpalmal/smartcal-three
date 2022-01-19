@@ -143,9 +143,9 @@
                                     <td class="text-center">Buyer</td>
                                     <td class="text-center">Delivery Location</td>
                                     <td class="text-center">Delivery Date</td>
-                                    <th class="text-center">TNA Start Date</th>
-                                    <th class="text-center">TNA End Date</th>
-                                    <th class="text-center">Delivery Complete Date</th>
+                                    <td class="text-center">TNA Start Date</td>
+                                    <td class="text-center">TNA End Date</td>
+                                    <td class="text-center">Delivery Complete Date</td>
                                     <td class="text-center">Status</td>
                                     <td class="text-center">Action</td>
                                 </tr>
