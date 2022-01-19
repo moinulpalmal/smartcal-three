@@ -189,6 +189,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -232,6 +234,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -274,6 +278,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -316,6 +322,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -358,6 +366,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -404,6 +414,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -450,6 +462,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -495,6 +509,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -541,6 +557,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -587,6 +605,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
@@ -632,6 +652,8 @@ Auth::routes();
         Route::get('booking/delivery-complete','BookingController@deliveryComplete')->name('booking.delivery-complete');
         Route::get('booking/search','BookingController@search')->name('booking.search');
         Route::post('booking/search-booking','BookingController@searchBooking')->name('booking.search-booking');
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
         Route::get('booking/detail/{id}','BookingController@detail')->name('booking.detail');
 
         Route::get('booking/detail/pdf/{id}','BookingController@pdf')->name('booking.detail.pdf');
