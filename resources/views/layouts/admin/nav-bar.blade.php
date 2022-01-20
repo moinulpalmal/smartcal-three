@@ -24,7 +24,6 @@
                                                 @if(Auth::user()->hasTaskPermission('restoreuser', Auth::user()->id))
                                                     <li class="{{ (request()->is('admin/historical-user')) ? 'active' : '' }}" ><a href="{{route('admin.historical-user')}}"><i class="fa fa-caret-right"></i> Historical User List</a></li>
                                                 @endif
-
                                                 <li class="{{ (request()->is('admin/user/role')) ? 'active' : '' }}" ><a href="{{route('admin.user.role')}}"><i class="fa fa-caret-right"></i> User Roles</a></li>
                                                 <li class="{{ (request()->is('admin/user/task')) ? 'active' : '' }}" ><a href="{{route('admin.user.task')}}"><i class="fa fa-caret-right"></i> User Tasks</a></li>
                                             </ul>
@@ -266,6 +265,19 @@
                                                 </ul>
                                             </li>
                                             <li class="{{ (request()->is('generalitem/product')) ? 'active' : '' }}"><a href="{{route('generalitem.product')}}"><i class="fa fa-cog"></i> <span> Product Setup</span></a></li>
+                                        </ul>
+                                    </li>
+                                @endif
+                                @if(Auth::user()->hasPermission('merchandising', Auth::user()->id))
+                                    <li class="{{ (request()->is('merchandising*')) ? 'active open' : '' }}">
+                                        <a role="button" tabindex="0"><i class="fa fa-mortar-board"></i> <span> Merchandising</span></a>
+                                        <ul>
+                                            <li class="{{ (request()->is('merchandising/booking*')) ? 'active open' : '' }}">
+                                                <a role="button" tabindex="0"><i class="fa fa-shopping-cart"></i> <span> Bookings</span></a>
+                                                <ul>
+                                                   <li class="{{ (request()->is('merchandising/booking/report')) ? 'active' : '' }}"><a href="{{ route('merchandising.booking.report') }}"><i class="fa fa-caret-right"></i> <span> Booking Report</span></a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 @endif

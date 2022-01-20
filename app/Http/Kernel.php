@@ -24,6 +24,7 @@ use App\Http\Middleware\CheckFabric;
 use App\Http\Middleware\CheckGeneralItem;
 use App\Http\Middleware\CheckGumtape;
 use App\Http\Middleware\CheckInterlining;
+use App\Http\Middleware\CheckMerchandising;
 use App\Http\Middleware\CheckPoly;
 use App\Http\Middleware\CheckQCSticker;
 use App\Http\Middleware\CheckResetPassword;
@@ -140,5 +141,6 @@ class Kernel extends HttpKernel
         'restoreuser' => CheckRestoreUser::class,
         'updateuser' => CheckEditUser::class,
         'resetpassword' => CheckResetPassword::class,
+        'merchandising' => CheckMerchandising::class,
     ];
 }

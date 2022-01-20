@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\DB;
 class BookingController extends Controller
 {
     //$product_group_id = 3;
-
     public function recent(){
         $purchaseOrders = PurchaseOrderMaster::orderBy('lpd_po_no', 'desc')
             ->where('product_group_id', 3)

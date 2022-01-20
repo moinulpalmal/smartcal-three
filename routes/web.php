@@ -692,6 +692,11 @@ Auth::routes();
 
     //General Item
 
+    Route::group(['as' => 'merchandising.','prefix' => 'merchandising','namespace' => 'Merchandising','middleware' => ['auth','merchandising']] , function(){
+        Route::get('booking/report','BookingController@report')->name('booking.report');
+        Route::post('booking/report-result','BookingController@reportResult')->name('booking.report-result');
+    });
+
 
 /*Route::get('/home', 'HomeController@index')->name('home');
     Auth::routes();
