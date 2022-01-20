@@ -89,7 +89,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('tissue.booking.search-result', compact('purchaseOrders'));
+            return view('tissue.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 

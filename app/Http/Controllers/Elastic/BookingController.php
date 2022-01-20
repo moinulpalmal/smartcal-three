@@ -80,7 +80,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('elastic.booking.search-result', compact('purchaseOrders'));
+            return view('elastic.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 

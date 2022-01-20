@@ -21,7 +21,7 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Carton & Board <span>Setup</span></h2>
+            <h2>Gum Tape <span>Setup</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>

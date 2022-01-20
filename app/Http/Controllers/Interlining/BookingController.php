@@ -90,7 +90,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('interlining.booking.search-result', compact('purchaseOrders'));
+            return view('interlining.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 
