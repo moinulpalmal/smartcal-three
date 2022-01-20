@@ -90,7 +90,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('poly.booking.search-result', compact('purchaseOrders'));
+            return view('poly.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 

@@ -92,7 +92,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('qc-sticker.booking.search-result', compact('purchaseOrders'));
+            return view('qc-sticker.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 

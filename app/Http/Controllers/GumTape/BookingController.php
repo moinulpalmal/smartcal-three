@@ -89,7 +89,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('gumtape.booking.search-result', compact('purchaseOrders'));
+            return view('gumtape.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 
