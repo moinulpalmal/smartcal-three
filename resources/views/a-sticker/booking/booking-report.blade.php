@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin-master')
 
 @section('title')
-    Elastic
+Arrow Sticker
 @endsection
 @section('content')
     <style type="text/css">
@@ -26,20 +26,20 @@
     </style>
     <div class="page page-dashboard">
         <div class="pageheader">
-            <h2>Elastic <span> Booking Report</span></h2>
+            <h2>Arrow Sticker <span> Booking Report</span></h2>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"> Elastic</a>
+                        <a href="#"> Arrow Sticker</a>
                     </li>
                     <li>
-                        <a href="{{route('elastic.booking.report')}}"> Booking Report</a>
+                        <a href="{{route('asticker.booking.report')}}"> Booking Report</a>
                     </li>
                     <li>
-                        <a class="active" href="#"> Print View</a>
+                        <a class="active" href="#">Print View</a>
                     </li>
                 </ul>
             </div>
@@ -47,9 +47,9 @@
         <!-- row -->
         <div class="add-nav">
             <div class="nav-heading">
-                <h3>Elastic : <strong class="text-greensea">Booking Report</strong></h3>
+                <h3>Arrow Sticker : <strong class="text-greensea">Booking Report</strong></h3>
                 <span class="controls pull-right">
-                    <a href="{{route('elastic.booking.report')}}" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="Back"><i class="fa fa-times"></i></a>
+                    <a href="{{route('asticker.booking.report')}}" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="Back"><i class="fa fa-times"></i></a>
 {{--                    <a href="javascript:;" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="Send"><i class="fa fa-envelope"></i></a>--}}
                     <a href="javascript:window.print()" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20" data-toggle="tooltip" title="Print"><i class="fa fa-print"></i></a>
                 </span>
@@ -95,7 +95,7 @@
                                             <!-- col -->
                                             <div class="col-md-6 text-left">
                                                 <ul class="list-unstyled text-default lt mb-20">
-                                                    <li style="font-size: medium;"><strong>Booking Report:</strong> Elastic</li>
+                                                    <li style="font-size: medium;"><strong>Booking Report:</strong> Arrow Sticker</li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 text-right">
@@ -106,7 +106,7 @@
                                                         <li><strong>From Date:</strong>  {{\Carbon\Carbon::parse(\Carbon\Carbon::now()->addYear(-30))->format('d/m/Y')}}</li>
                                                     @endif
                                                         @if(!empty($request->to_date))
-                                                            <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse($request->to_date)->format('d/m/Y')}}</li>
+                                                            <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse($request->from_date)->format('d/m/Y')}}</li>
                                                         @else
                                                             <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse(\Carbon\Carbon::today())->format('d/m/Y')}}</li>
                                                         @endif

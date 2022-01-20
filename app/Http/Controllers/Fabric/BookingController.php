@@ -89,7 +89,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('fabric.booking.search-result', compact('purchaseOrders'));
+            return view('fabric.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 

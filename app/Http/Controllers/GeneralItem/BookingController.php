@@ -124,7 +124,7 @@ class BookingController extends Controller
                 $purchaseOrders = $purchaseOrders->whereIn('status', $status);
             }
 
-            return view('generalitem.booking.search-result', compact('purchaseOrders'));
+            return view('generalitem.booking.booking-report', compact('purchaseOrders'));
         }
         else{
 
