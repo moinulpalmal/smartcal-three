@@ -26,4 +26,41 @@ class InterliningPODetail extends Model
             ->get();
 
     }
+
+    public static function getTotalQuantity($masterId){
+        $poDetails = DB::table('interlining_p_o_details')
+            ->select('interlining_p_o_details.order_quantity', 'interlining_p_o_details.total_price')
+            ->where('purchase_order_master_id', $masterId)
+            ->where('status' , '!=', 'D')
+            ->get();
+
+        $total_order_quantity = 0;
+        //$sum_total_price = 0;
+
+        foreach ($poDetails as $detail){
+            $total_order_quantity = $total_order_quantity + (float)$detail->order_quantity;
+            //$sum_total_price = $sum_total_price + (float)$detail->total_price;
+        }
+
+
+
+        return $total_order_quantity;
+    }
+
+    public static function getSumTotalPrice($masterId){
+        $poDetails = DB::table('interlining_p_o_details')
+            ->select('interlining_p_o_details.order_quantity', 'interlining_p_o_details.total_price')
+            ->where('purchase_order_master_id', $masterId)
+            ->where('status' , '!=', 'D')
+            ->get();
+        //$total_order_quantity = 0;
+        $sum_total_price = 0;
+        foreach ($poDetails as $detail){
+            //$total_order_quantity = $total_order_quantity + (float)$detail->order_quantity;
+            $sum_total_price = $sum_total_price + (float)$detail->total_price;
+        }
+
+        return $sum_total_price;
+
+    }
 }

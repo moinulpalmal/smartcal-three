@@ -164,6 +164,32 @@
                                             </table>
                                         </div>
                                         @endforeach
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-condensed" id="items">
+                                                <tfoot>
+                                                <tr style="height: 3px !important;">
+                                                    <td colspan="2" style="font-size: small !important;" class="text-right"><p><b>Total:</b></p></td>
+                                                    <td colspan="1" style="font-size: x-small !important;" class="text-right">
+                                                        <P>
+                                                            <b>
+                                                                {!! number_format($order_quantity, 0, '.', ',') !!}
+                                                            </b>
+                                                        </P>
+                                                    </td>
+                                                    <td colspan="2" style="font-size: x-small !important;" class="text-right">
+                                                        <P>
+                                                            <b>
+                                                                $ {!! number_format($total_price, 3, '.', ',') !!}
+                                                            </b>
+                                                        </P>
+                                                    </td>
+                                                    <td style="font-size: x-small !important;" class="text-right">
+
+                                                    </td>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
                                     </div>
                                     <!-- /tile body -->
                                 </section>

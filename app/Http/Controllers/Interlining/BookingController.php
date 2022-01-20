@@ -283,13 +283,15 @@ class BookingController extends Controller
 
                     $details = InterliningPODetail::getElasticPODetails($id);
                     $uniqueProducts = InterliningPODetail::getUniqueProducts($id);
+                    $total_price = InterliningPODetail::getSumTotalPrice($id);
+                    $order_quantity = InterliningPODetail::getTotalQuantity($id);
                     //$units = Unit::getAllActiveUnitsForSelectList();
                     //return $products;
                     $master = $purchase_order_master;
 
                     return view('interlining.booking.print',
                         compact('master',
-                            'details', 'uniqueProducts'));
+                            'details', 'uniqueProducts', 'total_price', 'order_quantity'));
 
                 }
                 return redirect()->route('interlining.booking.recent');
