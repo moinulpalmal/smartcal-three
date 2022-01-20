@@ -106,7 +106,7 @@ Poly
                                                         <li><strong>From Date:</strong>  {{\Carbon\Carbon::parse(\Carbon\Carbon::now()->addYear(-30))->format('d/m/Y')}}</li>
                                                     @endif
                                                         @if(!empty($request->to_date))
-                                                            <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse($request->from_date)->format('d/m/Y')}}</li>
+                                                            <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse($request->to_date)->format('d/m/Y')}}</li>
                                                         @else
                                                             <li><strong>To Date:</strong>  {{\Carbon\Carbon::parse(\Carbon\Carbon::today())->format('d/m/Y')}}</li>
                                                         @endif
