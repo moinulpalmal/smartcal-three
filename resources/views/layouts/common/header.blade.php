@@ -3,7 +3,7 @@
         <!-- Branding -->
         <div class="branding">
             <a class="brand" href="{{route('start')}}">
-                <span><strong>M</strong>TRIMS</span>
+                <span><strong>Smart</strong>Cal Three</span>
             </a>
             <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a>
         </div>
