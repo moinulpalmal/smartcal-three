@@ -34,7 +34,7 @@
                     <a href="{{route('cartoon.booking.recent')}}"> Recent Bookings</a>
                 </li>
                 <li>
-                    <a href="{{route('cartoon.booking.detail', ['id', $purchaseOrder->id ])}}"> LPD PO NO: {{$purchaseOrder->lpd_po_no}}</a>
+                    <a href="{{route('cartoon.booking.detail', ['id', $purchaseOrder->id ])}}"> LPD-3 PO NO: {{$purchaseOrder->lpd_po_no}}</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +52,7 @@
                             {{--<div class="thumb thumb-xl">
                                 <img class="img-circle" src="assets/images/arnold-avatar.jpg" alt="">
                             </div>--}}
-                            <h4 class="mb-0"><strong>LPD PO NO:</strong> {{$purchaseOrder->lpd_po_no}}</h4>
+                            <h4 class="mb-0"><strong>LPD-3 PO NO:</strong> {{$purchaseOrder->lpd_po_no}}</h4>
                             <div class="mt-10">
                                 @if($duplicate == true)
                                     @if(Auth::user()->hasTaskPermission('resetpo', Auth::user()->id))

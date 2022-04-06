@@ -227,9 +227,15 @@
                                                             <!-- tile header -->
                                                             <div class="tile-header dvd dvd-btm">
                                                                 <h1 class="custom-font"><strong>Role & Task</strong> Access Form</h1>
-                                                                @if(Auth::user()->id != $user->id)
+                                                                @if(Auth::user()->id == 1)
                                                                     @if(Auth::user()->hasTaskPermission('useraccess', Auth::user()->id))
                                                                         <a><button id="iconChange" class="pull-right btn-info btn-xs" type="submit"><i class="fa fa-check"></i></button></a>
+                                                                    @endif
+                                                                @else
+                                                                    @if(Auth::user()->id != $user->id)
+                                                                        @if(Auth::user()->hasTaskPermission('useraccess', Auth::user()->id))
+                                                                            <a><button id="iconChange" class="pull-right btn-info btn-xs" type="submit"><i class="fa fa-check"></i></button></a>
+                                                                        @endif
                                                                     @endif
                                                                 @endif
 

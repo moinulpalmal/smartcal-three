@@ -39,7 +39,7 @@
                         <a href="{{route('cartoon.booking.recent')}}"> Recent Bookings</a>
                     </li>
                     <li>
-                        <a href="{{route('cartoon.booking.detail', ['id' => $master->id ])}}"> LPD PO NO: {{$master->lpd_po_no}}</a>
+                        <a href="{{route('cartoon.booking.detail', ['id' => $master->id ])}}"> LPD-3 PO NO: {{$master->lpd_po_no}}</a>
                     </li>
                     <li>
                         <a href="#"> Print View</a>
@@ -50,7 +50,7 @@
         <!-- row -->
         <div class="add-nav">
             <div class="nav-heading">
-                <h3>LPD PO No : <strong class="text-greensea">{{$master->lpd_po_no}}</strong></h3>
+                <h3>LPD-3 PO No : <strong class="text-greensea">{{$master->lpd_po_no}}</strong></h3>
                 <span class="controls pull-right">
                     <a href="{{route('cartoon.booking.detail', ['id' => $master->id ])}}" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="Back"><i class="fa fa-times"></i></a>
 {{--                    <a href="javascript:;" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" data-toggle="tooltip" title="Send"><i class="fa fa-envelope"></i></a>--}}

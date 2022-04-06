@@ -3,7 +3,7 @@
 @section('body')
     <div id="wrap" class="animsition">
         <div class="page page-core page-login">
-            <div class="text-center"><h3 class="text-light text-white"><span class="text-lightred">Smart</span> Cal</h3></div>
+            <div class="text-center"><h3 class="text-light text-white"><span class="text-lightred">Smart</span> Cal Three</h3></div>
             <div class="container w-420 p-15 bg-white mt-40 text-center">
                 <h2 class="text-light text-greensea">{{ __('Login') }}</h2>
                 <div class="row">
@@ -11,7 +11,7 @@
                         <div class="alert alert-warning">
                             <strong>Merchandiser Login Info!</strong><br><br>
                             <ul>
-                                <li class="text-left"><strong>Email: </strong>merchandising.lpd@palmalgarments.com</li>
+                                <li class="text-left"><strong>Email: </strong>merchandising.lpd_3@palmalgarments.com</li>
                                 <li class="text-left"><strong>Password: </strong>123456789</li>
                             </ul>
                         </div>

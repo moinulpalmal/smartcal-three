@@ -182,10 +182,11 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                <tr >
+                                <tr>
                                     <td class="text-center">Sl No.</td>
-                                    <td class="text-center">Cartoon/Board</td>
+                                    <td class="text-center">Carton/Board</td>
                                     <td class="text-center">Name</td>
+                                    <td class="text-center">Has Sub Measurement</td>
                                     <td class="text-center">Status</td>
                                     <td class="text-center">Action</td>
                                 </tr>

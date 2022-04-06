@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="{{ asset('imageFolder/addressbarLogo.png') }}">--}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Smart Cal - @yield('title')</title>
+    <title>Smart Cal Three - @yield('title')</title>
     <link rel="icon" type="image/ico" href="{{ asset('/') }}back-end/assets/images/favicon.ico" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
