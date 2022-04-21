@@ -100,7 +100,7 @@
 
                                             <div class="col-md-6 text-left">
                                                 <ul class="list-unstyled text-default lt mb-20">
-                                                    <li style="font-size: medium;"><strong>LPD PO NO:</strong> {{$master->lpd_po_no}}</li>
+                                                    <li style="font-size: medium;"><strong>LPD-3 PO NO:</strong> {{$master->lpd_po_no}}</li>
                                                     <li><strong>Date:</strong> {{\Carbon\Carbon::parse($master->lpd_po_date)->format('j-M-Y')}}</li>
                                                     <li><strong>Supplier Name:</strong> {{(App\Helpers\Helper::IDwiseData('suppliers','id', $master->supplier_id))->name}}</li>
                                                     <li><strong>Attention:</strong> {{(App\Helpers\Helper::IDwiseData('suppliers','id', $master->supplier_id))->primary_contact_person}}</li>
